@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Quiz</string>
+    <string name="button_true">Prawda</string>
+    <string name="button_false">Fałsz</string>
+    <string name="button_next">Następne</string>
+    <string name="q_jd">Czy jest dobrze?</string>
+    <string name="q_cpt">Czy Kapitan Bomba to prawdziwy kapitan?</string>
+    <string name="q_job">Czy praca popłaca?</string>
+    <string name="q_idk">Czy powinienem w końcu się wyspać?</string>
+    <string name="q_hit">Czy cios nna wątrobe boli?</string>
+    <string name="correct_answer">Prawidłowa odpowiedź. Liczba prawidłowych odpowiedzi:</string>
+    <string name="incorrect_answer">Nieprawidłowa odpowiedź.</string>
+    <string name="answer_was_shown">Odpowiedź już została pokazana.</string>
+</resources>
