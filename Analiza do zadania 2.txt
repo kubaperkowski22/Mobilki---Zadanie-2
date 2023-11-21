@@ -26,4 +26,7 @@ PODPUNKT 10:
 2023-10-16 22:06:17.367  3187-3187  Resume                  com.example.quiz                     D  ZNOWU LECI
 
 W trakcie analizy tej części zadania, bardzo się zdziwiłem. Na moment gdy tylko zmieniłem orientację urządzenia, wywołały się wszystkie metody zmiany stanu. 
-Pokolei aplikacja, została zawieszona, zatrzymana, wyłączona, instancja na nowo stworzona i rozpoczęła się sesja. Moim zdaniem świadczy to o nieoptymalnym rozwiązaniu, ponieważ stan aplikacji mógł po prostu zostać zatrzymany na czas zmiany orientacji i ponowiony, gdy tylko proces się zakończył
+Pokolei aplikacja, została zawieszona, zatrzymana, wyłączona, instancja na nowo stworzona i rozpoczęła się sesja. Moim zdaniem świadczy to o nieoptymalnym rozwiązaniu, ponieważ stan aplikacji mógł po prostu zostać zatrzymany na czas zmiany orientacji i ponowiony, gdy tylko proces się zakończył.
+
+Link do github:
+https://github.com/kubaperkowski22/Mobilki---Zadanie-2
