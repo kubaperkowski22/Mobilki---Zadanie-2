@@ -1,0 +1,29 @@
+PODPUNKT 8:
+2023-10-16 22:00:09.277 32718-32718 Pause                   com.example.quiz                     D  ZAWIESIŁO SIĘ
+2023-10-16 22:00:09.296 32718-32718 Stop                    com.example.quiz                     D  STOP
+2023-10-16 22:00:09.302 32718-32718 QUIZ_TAG                com.example.quiz                     D  Wywołana została metoda: onSaveInstanceState
+2023-10-16 22:00:13.722  2980-2980  ActivityManagerWrapper  com.miui.home                        E  getRecentTasks: taskId=1921   userId=0   baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.example.quiz/.MainActivity }
+2023-10-16 22:00:16.015 32718-32718 Start                   com.example.quiz                     D  ZACZĘŁO SIĘ
+2023-10-16 22:00:16.016 32718-32718 Resume                  com.example.quiz                     D  ZNOWU LECI
+2023-10-16 22:00:23.119  2980-2980  ActivityManagerWrapper  com.miui.home                        E  getRecentTasks: taskId=1921   userId=0   baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.example.quiz/.MainActivity }
+2023-10-16 22:00:23.842 32718-32718 Pause                   com.example.quiz                     D  ZAWIESIŁO SIĘ
+2023-10-16 22:00:23.868 32718-32718 Stop                    com.example.quiz                     D  STOP
+2023-10-16 22:00:23.872 32718-32718 QUIZ_TAG                com.example.quiz                     D  Wywołana została metoda: onSaveInstanceState
+2023-10-16 22:00:25.081 32718-32718 Destroy                 com.example.quiz                     D  ZNISZCZYŁO SIĘ
+
+W trakcie zarządzania aplikacją zauważyłem, że gdy tylko przełącze aplikację, wywoływana są funkcje Pause, Stop i onSaveInstanceState.
+Póki tego nie sprawdziłem, byłem pewien że funkcja stop się nie wywoła. Dodatkowo gdy wejdę spowrotem, Wywoływana zostaje funkcja Start i Resume.
+Gdy ponownie wyszedłem i tym razem zamknąłem aplikację, do zestawu wywołanych metod dołączyła także funkcja Destroy, która najprawdopobniej po prostu zniszczyła instancję aplikacji.
+
+PODPUNKT 10:
+
+2023-10-16 22:06:17.240  3187-3187  Pause                   com.example.quiz                     D  ZAWIESIŁO SIĘ
+2023-10-16 22:06:17.242  3187-3187  Stop                    com.example.quiz                     D  STOP
+2023-10-16 22:06:17.244  3187-3187  QUIZ_TAG                com.example.quiz                     D  Wywołana została metoda: onSaveInstanceState
+2023-10-16 22:06:17.245  3187-3187  Destroy                 com.example.quiz                     D  ZNISZCZYŁO SIĘ
+2023-10-16 22:06:17.287  3187-3187  QUIZ_TAG                com.example.quiz                     D  Wywołana została metoda cyklu życia: onCreate
+2023-10-16 22:06:17.363  3187-3187  Start                   com.example.quiz                     D  ZACZĘŁO SIĘ
+2023-10-16 22:06:17.367  3187-3187  Resume                  com.example.quiz                     D  ZNOWU LECI
+
+W trakcie analizy tej części zadania, bardzo się zdziwiłem. Na moment gdy tylko zmieniłem orientację urządzenia, wywołały się wszystkie metody zmiany stanu. 
+Pokolei aplikacja, została zawieszona, zatrzymana, wyłączona, instancja na nowo stworzona i rozpoczęła się sesja. Moim zdaniem świadczy to o nieoptymalnym rozwiązaniu, ponieważ stan aplikacji mógł po prostu zostać zatrzymany na czas zmiany orientacji i ponowiony, gdy tylko proces się zakończył
